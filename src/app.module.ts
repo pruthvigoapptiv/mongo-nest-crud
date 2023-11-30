@@ -9,11 +9,12 @@ import { MongooseModule } from '@nestjs/mongoose';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath:'.env',
-      isGlobal:true
+      envFilePath: '.env',
+      isGlobal: true,
     }),
     MongooseModule.forRoot(process.env.DB_URI),
-    BookModule],
+    BookModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
